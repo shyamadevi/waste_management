@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>WasteVision | Smart Waste Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+
+    <!-- =====================================================
+         HERO CAROUSEL
+         ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-slides">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="hero-slide active">
+
+                <div class="hero-image hero-pune"></div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-container">
+
+                    <div class="hero-content">
+
+                        <div class="hero-tag">
+                            ♻️ SMART WASTE MANAGEMENT
+                        </div>
+
+                        <h1>
+                            Building a
+                            <span>Cleaner & Smarter</span>
+                            Pune
+                        </h1>
+
+                        <p>
+                            WasteVision combines Artificial Intelligence,
+                            IoT, predictive analytics and GIS to create
+                            a smarter and more sustainable approach to
+                            urban waste management.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="{{ url_for('report') }}"
+                               class="primary-btn">
+                                Report Waste
+                                <span>→</span>
+                            </a>
+
+                            <a href="{{ url_for('categories') }}"
+                               class="secondary-btn">
+                                Explore Categories
+                            </a>
+
+                        </div>
+
+                        <div class="hero-location">
+                            📍 Pune, Maharashtra
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="hero-slide">
+
+                <div class="hero-image hero-green"></div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-container">
+
+                    <div class="hero-content">
+
+                        <div class="hero-tag">
+                            🤖 AI-POWERED CLASSIFICATION
+                        </div>
+
+                        <h1>
+                            Smarter Waste
+                            <span>Starts with Better</span>
+                            Classification
+                        </h1>
+
+                        <p>
+                            Identify waste and support proper segregation
+                            into Hazardous, Organic, Inorganic and
+                            Recyclable categories.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="{{ url_for('categories') }}"
+                               class="primary-btn">
+                                Explore Categories
+                                <span>→</span>
+                            </a>
+
+                            <a href="{{ url_for('about') }}"
+                               class="secondary-btn">
+                                Learn More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="hero-slide">
+
+                <div class="hero-image hero-bin"></div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-container">
+
+                    <div class="hero-content">
+
+                        <div class="hero-tag">
+                            📡 IoT + PREDICTIVE ANALYTICS
+                        </div>
+
+                        <h1>
+                            Smart Bins.
+                            <span>Smarter Collection.</span>
+                        </h1>
+
+                        <p>
+                            Monitor bin conditions and predict
+                            filling patterns to support timely
+                            and efficient waste collection.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="{{ url_for('dashboard') }}"
+                               class="primary-btn">
+                                View Dashboard
+                                <span>→</span>
+                            </a>
+
+                            <a href="{{ url_for('about') }}"
+                               class="secondary-btn">
+                                Discover WasteVision
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 4 -->
+
+            <div class="hero-slide">
+
+                <div class="hero-image hero-gis"></div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-container">
+
+                    <div class="hero-content">
+
+                        <div class="hero-tag">
+                            🗺️ GIS & SMART ROUTING
+                        </div>
+
+                        <h1>
+                            Better Routes.
+                            <span>Cleaner Streets.</span>
+                        </h1>
+
+                        <p>
+                            GIS-based planning helps identify waste
+                            hotspots and support smarter collection
+                            route planning.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="{{ url_for('dump_locations') }}"
+                               class="primary-btn">
+                                Explore Locations
+                                <span>→</span>
+                            </a>
+
+                            <a href="{{ url_for('report') }}"
+                               class="secondary-btn">
+                                Report Waste
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO CONTROLS -->
+
+        <button class="hero-arrow hero-prev"
+                id="prevSlide">
+            ❮
+        </button>
+
+        <button class="hero-arrow hero-next"
+                id="nextSlide">
+            ❯
+        </button>
+
+
+
+        <!-- HERO DOTS -->
+
+        <div class="hero-dots">
+
+            <button class="hero-dot active"
+                    data-slide="0"></button>
+
+            <button class="hero-dot"
+                    data-slide="1"></button>
+
+            <button class="hero-dot"
+                    data-slide="2"></button>
+
+            <button class="hero-dot"
+                    data-slide="3"></button>
+
+        </div>
+
+
+
+        <!-- SCROLL -->
+
+        <div class="scroll-down">
+
+            <span>Scroll to explore</span>
+
+            <div class="scroll-icon">
+                ↓
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURES
+         ===================================================== -->
+
+    <section class="features">
+
+        <div class="section-heading">
+
+            <span>
+                SMART SOLUTIONS
+            </span>
+
+            <h2>
+                Technology for Better
+                <strong>Waste Management</strong>
+            </h2>
+
+            <p>
+                WasteVision brings multiple intelligent technologies
+                together to support efficient and sustainable waste
+                management.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-grid">
+
+
+            <!-- FEATURE 1 -->
+
+            <div class="feature-card">
+
+                <div class="feature-top">
+
+                    <div class="feature-icon">
+                        🤖
+                    </div>
+
+                    <span class="feature-number">
+                        01
+                    </span>
+
+                </div>
+
+                <h3>
+                    AI Waste Classification
+                </h3>
+
+                <p>
+                    Identify and classify waste into appropriate
+                    categories using AI-based techniques.
+                </p>
+
+                <a href="{{ url_for('categories') }}">
+                    Explore Classification
+                    →
+                </a>
+
+            </div>
+
+
+
+            <!-- FEATURE 2 -->
+
+            <div class="feature-card">
+
+                <div class="feature-top">
+
+                    <div class="feature-icon">
+                        📡
+                    </div>
+
+                    <span class="feature-number">
+                        02
+                    </span>
+
+                </div>
+
+                <h3>
+                    Smart Bin Monitoring
+                </h3>
+
+                <p>
+                    Monitor waste-bin conditions and identify
+                    bins requiring attention or collection.
+                </p>
+
+                <a href="{{ url_for('dashboard') }}">
+                    View Monitoring
+                    →
+                </a>
+
+            </div>
+
+
+
+            <!-- FEATURE 3 -->
+
+            <div class="feature-card">
+
+                <div class="feature-top">
+
+                    <div class="feature-icon">
+                        🔮
+                    </div>
+
+                    <span class="feature-number">
+                        03
+                    </span>
+
+                </div>
+
+                <h3>
+                    Fill-Level Prediction
+                </h3>
+
+                <p>
+                    Predict when bins may become full and support
+                    timely collection planning.
+                </p>
+
+                <a href="{{ url_for('dashboard') }}">
+                    View Predictions
+                    →
+                </a>
+
+            </div>
+
+
+
+            <!-- FEATURE 4 -->
+
+            <div class="feature-card">
+
+                <div class="feature-top">
+
+                    <div class="feature-icon">
+                        🗺️
+                    </div>
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                </div>
+
+                <h3>
+                    Route Optimization
+                </h3>
+
+                <p>
+                    Use location-based information to support
+                    efficient waste collection route planning.
+                </p>
+
+                <a href="{{ url_for('dump_locations') }}">
+                    Explore Locations
+                    →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WASTE CATEGORIES
+         ===================================================== -->
+
+    <section class="categories-preview">
+
+        <div class="section-heading">
+
+            <span>
+                WASTE CLASSIFICATION
+            </span>
+
+            <h2>
+                Know Your Waste
+            </h2>
+
+            <p>
+                Proper classification and segregation help support
+                responsible waste handling.
+            </p>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <!-- HAZARDOUS -->
+
+            <div class="category-card hazardous">
+
+                <div class="category-icon">
+                    ☣️
+                </div>
+
+                <span class="category-number">
+                    01
+                </span>
+
+                <h3>
+                    Hazardous
+                </h3>
+
+                <p>
+                    Waste requiring special handling and
+                    appropriate disposal procedures.
+                </p>
+
+                <a href="{{ url_for('categories') }}">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+
+            <!-- ORGANIC -->
+
+            <div class="category-card organic">
+
+                <div class="category-icon">
+                    🌱
+                </div>
+
+                <span class="category-number">
+                    02
+                </span>
+
+                <h3>
+                    Organic
+                </h3>
+
+                <p>
+                    Food, kitchen and other biodegradable
+                    waste materials.
+                </p>
+
+                <a href="{{ url_for('categories') }}">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+
+            <!-- INORGANIC -->
+
+            <div class="category-card inorganic">
+
+                <div class="category-icon">
+                    🗑️
+                </div>
+
+                <span class="category-number">
+                    03
+                </span>
+
+                <h3>
+                    Inorganic
+                </h3>
+
+                <p>
+                    General non-biodegradable materials that
+                    require proper disposal.
+                </p>
+
+                <a href="{{ url_for('categories') }}">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+
+            <!-- RECYCLABLE -->
+
+            <div class="category-card recyclable">
+
+                <div class="category-icon">
+                    ♻️
+                </div>
+
+                <span class="category-number">
+                    04
+                </span>
+
+                <h3>
+                    Recyclable
+                </h3>
+
+                <p>
+                    Materials that can be recovered and
+                    processed for recycling.
+                </p>
+
+                <a href="{{ url_for('categories') }}">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+         ===================================================== -->
+
+    <section class="how-section">
+
+        <div class="section-heading">
+
+            <span>
+                HOW WASTEVISION WORKS
+            </span>
+
+            <h2>
+                From Waste
+                <strong>to Action</strong>
+            </h2>
+
+            <p>
+                A connected workflow bringing citizens,
+                intelligent technologies and waste management
+                together.
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    01
+                </div>
+
+                <div class="workflow-icon">
+                    📷
+                </div>
+
+                <h3>
+                    Identify
+                </h3>
+
+                <p>
+                    Waste can be identified through images,
+                    reports and citizen inputs.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    02
+                </div>
+
+                <div class="workflow-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Classify
+                </h3>
+
+                <p>
+                    AI-based techniques support classification
+                    into suitable waste categories.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    03
+                </div>
+
+                <div class="workflow-icon">
+                    📡
+                </div>
+
+                <h3>
+                    Monitor
+                </h3>
+
+                <p>
+                    IoT-enabled monitoring helps track
+                    bin conditions and fill levels.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    04
+                </div>
+
+                <div class="workflow-icon">
+                    🗺️
+                </div>
+
+                <h3>
+                    Optimize
+                </h3>
+
+                <p>
+                    Predictive analytics and GIS support
+                    smarter collection planning.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PUNE CTA
+         ===================================================== -->
+
+    <section class="pune-cta">
+
+        <div class="pune-cta-overlay"></div>
+
+        <div class="pune-cta-content">
+
+            <span>
+                🌿 CLEAN PUNE • SMART PUNE
+            </span>
+
+            <h2>
+                Together, We Can Build
+                <strong>a Cleaner Pune</strong>
+            </h2>
+
+            <p>
+                Responsible waste management starts with awareness,
+                participation and the right technology.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="{{ url_for('report') }}"
+                   class="primary-btn">
+                    Report Waste →
+                </a>
+
+                <a href="{{ url_for('dump_locations') }}"
+                   class="secondary-btn">
+                    Find Dump Locations
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REPORT CTA
+         ===================================================== -->
+
+    <section class="report-cta">
+
+        <div class="report-content">
+
+            <span>
+                HELP KEEP YOUR CITY CLEAN
+            </span>
+
+            <h2>
+                Found an illegal
+                dumping location?
+            </h2>
+
+            <p>
+                Report waste or dumping locations and help improve
+                community waste management.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('report') }}"
+           class="primary-btn">
+
+            Report Waste →
+
+        </a>
+
+    </section>
+
+
+
+    {% include 'components/footer.html' %}
+
+
+
+    <!-- =====================================================
+         CAROUSEL JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        const slides =
+            document.querySelectorAll(".hero-slide");
+
+        const dots =
+            document.querySelectorAll(".hero-dot");
+
+        const nextButton =
+            document.getElementById("nextSlide");
+
+        const prevButton =
+            document.getElementById("prevSlide");
+
+        let currentSlide = 0;
+
+        let carouselTimer;
+
+
+
+        function showSlide(index) {
+
+            if (index >= slides.length) {
+                currentSlide = 0;
+            }
+
+            else if (index < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            else {
+                currentSlide = index;
+            }
+
+
+            slides.forEach((slide, i) => {
+
+                slide.classList.toggle(
+                    "active",
+                    i === currentSlide
+                );
+
+            });
+
+
+            dots.forEach((dot, i) => {
+
+                dot.classList.toggle(
+                    "active",
+                    i === currentSlide
+                );
+
+            });
+
+        }
+
+
+
+        function nextSlide() {
+
+            showSlide(currentSlide + 1);
+
+            restartCarousel();
+
+        }
+
+
+
+        function previousSlide() {
+
+            showSlide(currentSlide - 1);
+
+            restartCarousel();
+
+        }
+
+
+
+        function startCarousel() {
+
+            carouselTimer =
+                setInterval(() => {
+
+                    showSlide(currentSlide + 1);
+
+                }, 6000);
+
+        }
+
+
+
+        function restartCarousel() {
+
+            clearInterval(carouselTimer);
+
+            startCarousel();
+
+        }
+
+
+
+        nextButton.addEventListener(
+            "click",
+            nextSlide
+        );
+
+
+        prevButton.addEventListener(
+            "click",
+            previousSlide
+        );
+
+
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener(
+                "click",
+                () => {
+
+                    showSlide(index);
+
+                    restartCarousel();
+
+                }
+            );
+
+        });
+
+
+
+        startCarousel();
+
+
+
+        /* Pause while mouse is over hero */
+
+        const hero =
+            document.querySelector(".hero");
+
+
+        hero.addEventListener(
+            "mouseenter",
+            () => {
+                clearInterval(carouselTimer);
+            }
+        );
+
+
+        hero.addEventListener(
+            "mouseleave",
+            () => {
+                startCarousel();
+            }
+        );
+
+
+
+        /* Reveal animation */
+
+        const cards =
+            document.querySelectorAll(
+                ".feature-card, .category-card, .workflow-item"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        cards.forEach(card => {
+
+            observer.observe(card);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

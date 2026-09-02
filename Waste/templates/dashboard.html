@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            ♻️ <span>WasteVision</span>
+        </div>
+
+        <nav>
+            <a href="#" class="active">📊 Dashboard</a>
+            <a href="#">🗑️ Waste Management</a>
+            <a href="#">🚮 Bins</a>
+            <a href="#">🚚 Collection</a>
+            <a href="#">🗺️ Route Optimization</a>
+            <a href="#">🤖 Waste Classification</a>
+            <a href="#">📈 Predictions</a>
+            <a href="#">🔔 Alerts</a>
+            <a href="#">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">⚙️ Settings</a>
+            <a href="#">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your waste management overview.</p>
+            </div>
+
+            <div class="profile">
+                <div class="notification">🔔</div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Statistics Cards -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">🗑️</div>
+
+                <div>
+                    <p>Total Bins</p>
+                    <h2>248</h2>
+                    <span class="positive">↑ 8.2%</span>
+                    <small> vs last month</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon green">♻️</div>
+
+                <div>
+                    <p>Waste Collected</p>
+                    <h2>12.8 T</h2>
+                    <span class="positive">↑ 12.5%</span>
+                    <small> vs last month</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⚠️</div>
+
+                <div>
+                    <p>Full Bins</p>
+                    <h2>18</h2>
+                    <span class="negative">↑ 3.1%</span>
+                    <small> needs attention</small>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon purple">🚚</div>
+
+                <div>
+                    <p>Collections Today</p>
+                    <h2>42</h2>
+                    <span class="positive">↑ 5.4%</span>
+                    <small> completed</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Middle Section -->
+        <section class="content-grid">
+
+            <!-- Waste Collection -->
+            <div class="card chart-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Waste Collection</h3>
+                        <p>Weekly collection overview</p>
+                    </div>
+
+                    <select>
+                        <option>This Week</option>
+                        <option>Last Week</option>
+                        <option>This Month</option>
+                    </select>
+                </div>
+
+                <div class="chart">
+
+                    <div class="y-axis">
+                        <span>1000</span>
+                        <span>800</span>
+                        <span>600</span>
+                        <span>400</span>
+                        <span>200</span>
+                        <span>0</span>
+                    </div>
+
+                    <div class="bars">
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 55%;"></div>
+                            <span>Mon</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 72%;"></div>
+                            <span>Tue</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 60%;"></div>
+                            <span>Wed</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 82%;"></div>
+                            <span>Thu</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 68%;"></div>
+                            <span>Fri</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 90%;"></div>
+                            <span>Sat</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <div class="bar" style="height: 48%;"></div>
+                            <span>Sun</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Waste Categories -->
+            <div class="card">
+
+    <div class="card-header">
+        <div>
+            <h3>Waste Categories</h3>
+            <p>Classified waste distribution</p>
+        </div>
+    </div>
+
+    <div class="donut-container">
+
+        <div class="donut">
+            <div class="donut-center">
+                <strong>100%</strong>
+                <span>Total Waste</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="legend">
+
+        <div>
+            <span class="dot hazardous"></span>
+            Hazardous
+            <strong>15%</strong>
+        </div>
+
+        <div>
+            <span class="dot organic"></span>
+            Organic
+            <strong>40%</strong>
+        </div>
+
+        <div>
+            <span class="dot inorganic"></span>
+            Inorganic
+            <strong>25%</strong>
+        </div>
+
+        <div>
+            <span class="dot recyclable"></span>
+            Recyclable
+            <strong>20%</strong>
+        </div>
+
+    </div>
+
+</div>
+
+        </section>
+
+
+        <!-- Bottom Section -->
+        <section class="content-grid bottom-grid">
+
+            <!-- Bin Status -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Bin Status</h3>
+                        <p>Current status of waste bins</p>
+                    </div>
+
+                    <a href="#">View All →</a>
+                </div>
+
+                <div class="bin-list">
+
+    <!-- Hazardous Waste -->
+    <div class="bin-row">
+        <div class="bin-info">
+            <span class="bin-icon">☣️</span>
+            <div>
+                <strong>Hazardous</strong>
+                <small>Medical / Chemical Waste</small>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-fill red-fill"
+                     style="width: 82%;"></div>
+            </div>
+            <span>82%</span>
+        </div>
+
+        <span class="status warning">High</span>
+    </div>
+
+
+    <!-- Organic Waste -->
+    <div class="bin-row">
+        <div class="bin-info">
+            <span class="bin-icon">🌱</span>
+            <div>
+                <strong>Organic</strong>
+                <small>Food / Garden Waste</small>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-fill green-fill"
+                     style="width: 56%;"></div>
+            </div>
+            <span>56%</span>
+        </div>
+
+        <span class="status normal">Normal</span>
+    </div>
+
+
+    <!-- Inorganic Waste -->
+    <div class="bin-row">
+        <div class="bin-info">
+            <span class="bin-icon">🗑️</span>
+            <div>
+                <strong>Inorganic</strong>
+                <small>General Non-Biodegradable Waste</small>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-fill yellow-fill"
+                     style="width: 68%;"></div>
+            </div>
+            <span>68%</span>
+        </div>
+
+        <span class="status warning">Almost Full</span>
+    </div>
+
+
+    <!-- Recyclable Waste -->
+    <div class="bin-row">
+        <div class="bin-info">
+            <span class="bin-icon">♻️</span>
+            <div>
+                <strong>Recyclable</strong>
+                <small>Plastic / Paper / Metal</small>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-fill green-fill"
+                     style="width: 42%;"></div>
+            </div>
+            <span>42%</span>
+        </div>
+
+        <span class="status normal">Normal</span>
+    </div>
+
+</div>
+
+            </div>
+
+
+            <!-- Recent Alerts -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Recent Alerts</h3>
+                        <p>Latest system notifications</p>
+                    </div>
+
+                    <a href="#">View All →</a>
+                </div>
+
+
+                <div class="alerts">
+
+                    <div class="alert">
+                        <div class="alert-icon danger-icon">⚠️</div>
+
+                        <div>
+                            <strong>Bin BIN-027 is full</strong>
+                            <p>Station Road • 10 minutes ago</p>
+                        </div>
+                    </div>
+
+
+                    <div class="alert">
+                        <div class="alert-icon warning-icon">🔔</div>
+
+                        <div>
+                            <strong>Collection required</strong>
+                            <p>Market Road • 35 minutes ago</p>
+                        </div>
+                    </div>
+
+
+                    <div class="alert">
+                        <div class="alert-icon success-icon">✓</div>
+
+                        <div>
+                            <strong>Collection completed</strong>
+                            <p>Main Street • 1 hour ago</p>
+                        </div>
+                    </div>
+
+
+                    <div class="alert">
+                        <div class="alert-icon info-icon">ℹ️</div>
+
+                        <div>
+                            <strong>Route optimized</strong>
+                            <p>Route #12 • 2 hours ago</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

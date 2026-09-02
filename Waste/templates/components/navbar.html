@@ -1,0 +1,63 @@
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="{{ url_for('home') }}" class="logo">
+            <span class="logo-icon">♻️</span>
+            <span>WasteVision</span>
+        </a>
+
+
+        <!-- Navigation -->
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}"
+               class="{% if request.endpoint == 'home' %}active{% endif %}">
+                Home
+            </a>
+
+            <a href="{{ url_for('about') }}"
+               class="{% if request.endpoint == 'about' %}active{% endif %}">
+                About Us
+            </a>
+
+            <a href="{{ url_for('categories') }}"
+               class="{% if request.endpoint == 'categories' %}active{% endif %}">
+                Categories
+            </a>
+
+            <a href="{{ url_for('report') }}"
+               class="{% if request.endpoint == 'report' %}active{% endif %}">
+                Report Waste
+            </a>
+
+            <a href="{{ url_for('dump_locations') }}"
+               class="{% if request.endpoint == 'dump_locations' %}active{% endif %}">
+                Dump Locations
+            </a>
+
+            <a href="{{ url_for('dashboard') }}"
+               class="dashboard-link">
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Right side -->
+        <div class="nav-actions">
+
+            <a href="#" class="notification">
+                🔔
+            </a>
+
+            <a href="#" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>

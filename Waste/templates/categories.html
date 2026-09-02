@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Waste Categories | WasteVision</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/categories.css') }}">
+
+</head>
+
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+
+    <!-- =====================================================
+         PAGE HERO
+         ===================================================== -->
+
+    <section class="categories-hero">
+
+        <div class="categories-hero-overlay"></div>
+
+        <div class="categories-hero-content">
+
+            <span>
+                ♻️ WASTE CLASSIFICATION
+            </span>
+
+            <h1>
+                Know Your Waste.
+                <strong>Choose the Right Action.</strong>
+            </h1>
+
+            <p>
+                Understanding different types of waste is the first
+                step towards responsible segregation, collection
+                and sustainable waste management.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+
+    <section class="categories-intro">
+
+        <div class="categories-container">
+
+            <div class="categories-intro-content">
+
+                <span class="section-label">
+                    WASTEVISION CLASSIFICATION
+                </span>
+
+                <h2>
+                    Four Categories.
+                    <strong>One Cleaner Future.</strong>
+                </h2>
+
+                <p>
+                    WasteVision organizes waste into four primary
+                    categories to support better identification,
+                    segregation and management.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CATEGORY CARDS
+         ===================================================== -->
+
+    <section class="category-details">
+
+        <div class="categories-container">
+
+            <div class="category-details-grid">
+
+
+                <!-- =================================================
+                     HAZARDOUS
+                     ================================================= -->
+
+                <article class="detail-card hazardous">
+
+                    <div class="detail-image hazardous-image">
+
+                        <div class="detail-number">
+                            01
+                        </div>
+
+                        <div class="detail-icon">
+                            ☣️
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-content">
+
+                        <span class="detail-label">
+                            CATEGORY 01
+                        </span>
+
+                        <h3>
+                            Hazardous Waste
+                        </h3>
+
+                        <p>
+                            Waste that may pose risks to human health
+                            or the environment and therefore requires
+                            appropriate handling and disposal.
+                        </p>
+
+
+                        <div class="examples">
+
+                            <strong>
+                                Examples
+                            </strong>
+
+                            <div class="example-tags">
+
+                                <span>
+                                    Medical Waste
+                                </span>
+
+                                <span>
+                                    Chemical Waste
+                                </span>
+
+                                <span>
+                                    Batteries
+                                </span>
+
+                                <span>
+                                    Toxic Materials
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="handling">
+
+                            <span class="handling-icon">
+                                ⚠️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Handle Carefully
+                                </strong>
+
+                                <p>
+                                    Requires appropriate collection
+                                    and disposal procedures.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     ORGANIC
+                     ================================================= -->
+
+                <article class="detail-card organic">
+
+                    <div class="detail-image organic-image">
+
+                        <div class="detail-number">
+                            02
+                        </div>
+
+                        <div class="detail-icon">
+                            🌱
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-content">
+
+                        <span class="detail-label">
+                            CATEGORY 02
+                        </span>
+
+                        <h3>
+                            Organic Waste
+                        </h3>
+
+                        <p>
+                            Biodegradable material that can naturally
+                            decompose and may be suitable for
+                            composting or biological treatment.
+                        </p>
+
+
+                        <div class="examples">
+
+                            <strong>
+                                Examples
+                            </strong>
+
+                            <div class="example-tags">
+
+                                <span>
+                                    Food Waste
+                                </span>
+
+                                <span>
+                                    Kitchen Waste
+                                </span>
+
+                                <span>
+                                    Garden Waste
+                                </span>
+
+                                <span>
+                                    Plant Matter
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="handling">
+
+                            <span class="handling-icon">
+                                🌿
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Compost & Recover
+                                </strong>
+
+                                <p>
+                                    Suitable organic waste can be
+                                    processed through composting.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     INORGANIC
+                     ================================================= -->
+
+                <article class="detail-card inorganic">
+
+                    <div class="detail-image inorganic-image">
+
+                        <div class="detail-number">
+                            03
+                        </div>
+
+                        <div class="detail-icon">
+                            🗑️
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-content">
+
+                        <span class="detail-label">
+                            CATEGORY 03
+                        </span>
+
+                        <h3>
+                            Inorganic Waste
+                        </h3>
+
+                        <p>
+                            Non-biodegradable waste that generally does
+                            not decompose naturally and requires
+                            appropriate disposal or recovery.
+                        </p>
+
+
+                        <div class="examples">
+
+                            <strong>
+                                Examples
+                            </strong>
+
+                            <div class="example-tags">
+
+                                <span>
+                                    Mixed Waste
+                                </span>
+
+                                <span>
+                                    Ceramics
+                                </span>
+
+                                <span>
+                                    Non-Recyclable Items
+                                </span>
+
+                                <span>
+                                    Synthetic Materials
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="handling">
+
+                            <span class="handling-icon">
+                                🗑️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Dispose Responsibly
+                                </strong>
+
+                                <p>
+                                    Should be collected and managed
+                                    through suitable disposal systems.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     RECYCLABLE
+                     ================================================= -->
+
+                <article class="detail-card recyclable">
+
+                    <div class="detail-image recyclable-image">
+
+                        <div class="detail-number">
+                            04
+                        </div>
+
+                        <div class="detail-icon">
+                            ♻️
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-content">
+
+                        <span class="detail-label">
+                            CATEGORY 04
+                        </span>
+
+                        <h3>
+                            Recyclable Waste
+                        </h3>
+
+                        <p>
+                            Materials that can potentially be collected,
+                            processed and used again as secondary
+                            raw materials.
+                        </p>
+
+
+                        <div class="examples">
+
+                            <strong>
+                                Examples
+                            </strong>
+
+                            <div class="example-tags">
+
+                                <span>
+                                    Paper
+                                </span>
+
+                                <span>
+                                    Plastic
+                                </span>
+
+                                <span>
+                                    Metal
+                                </span>
+
+                                <span>
+                                    Cardboard
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="handling">
+
+                            <span class="handling-icon">
+                                ♻️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Recover & Recycle
+                                </strong>
+
+                                <p>
+                                    Keep recyclable materials separate
+                                    to support material recovery.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AI CLASSIFICATION
+         ===================================================== -->
+
+    <section class="ai-section">
+
+        <div class="categories-container">
+
+            <div class="ai-box">
+
+                <div class="ai-text">
+
+                    <span>
+                        🤖 INTELLIGENT CLASSIFICATION
+                    </span>
+
+                    <h2>
+                        Let Technology
+                        <strong>Help Identify Waste</strong>
+                    </h2>
+
+                    <p>
+                        WasteVision is designed to support AI-based
+                        image classification, helping identify the
+                        category of waste and assisting users in making
+                        better segregation decisions.
+                    </p>
+
+                    <a href="{{ url_for('report') }}"
+                       class="category-btn">
+                        Report Waste →
+                    </a>
+
+                </div>
+
+
+                <div class="ai-visual">
+
+                    <div class="ai-circle">
+
+                        <span class="ai-main-icon">
+                            🤖
+                        </span>
+
+                        <div class="orbit orbit-1">
+                            ♻️
+                        </div>
+
+                        <div class="orbit orbit-2">
+                            🌱
+                        </div>
+
+                        <div class="orbit orbit-3">
+                            ☣️
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOTTOM CTA
+         ===================================================== -->
+
+    <section class="category-cta">
+
+        <div class="categories-container">
+
+            <div class="category-cta-box">
+
+                <div>
+
+                    <span>
+                        MAKE A DIFFERENCE
+                    </span>
+
+                    <h2>
+                        Not sure where your waste belongs?
+                    </h2>
+
+                    <p>
+                        Use WasteVision to report waste and help
+                        create better waste-management decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="cta-buttons">
+
+                    <a href="{{ url_for('report') }}"
+                       class="category-btn">
+                        Report Waste →
+                    </a>
+
+                    <a href="{{ url_for('home') }}"
+                       class="category-outline-btn">
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {% include 'components/footer.html' %}
+
+
+</body>
+
+</html>

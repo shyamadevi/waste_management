@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dump Locations | WasteVision</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dump_locations.css') }}">
+
+</head>
+
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="locations-hero">
+
+        <div class="locations-hero-overlay"></div>
+
+        <div class="locations-hero-content">
+
+            <span>
+                🗺️ WASTE LOCATIONS & GIS
+            </span>
+
+            <h1>
+                Find Waste
+                <strong>Collection Locations</strong>
+            </h1>
+
+            <p>
+                Explore waste-related locations and support smarter
+                collection planning through location-based information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOCATION SEARCH
+         ===================================================== -->
+
+    <section class="locations-section">
+
+        <div class="locations-container">
+
+            <div class="location-layout">
+
+
+                <!-- =================================================
+                     LEFT PANEL
+                     ================================================= -->
+
+                <div class="location-sidebar">
+
+                    <div class="sidebar-header">
+
+                        <span>
+                            LOCATION DIRECTORY
+                        </span>
+
+                        <h2>
+                            Nearby Waste
+                            <strong>Locations</strong>
+                        </h2>
+
+                        <p>
+                            Search or select a location to view
+                            available waste-management information.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+
+                    <div class="search-box">
+
+                        <span>
+                            🔎
+                        </span>
+
+                        <input
+                            type="text"
+                            id="locationSearch"
+                            placeholder="Search location...">
+
+                    </div>
+
+
+                    <!-- CURRENT LOCATION -->
+
+                    <button
+                        class="current-location-btn"
+                        id="currentLocation">
+
+                        📍 Use My Location
+
+                    </button>
+
+
+                    <!-- LOCATION LIST -->
+
+                    <div
+                        class="location-list"
+                        id="locationList">
+
+
+                        <!-- LOCATION 1 -->
+
+                        <div
+                            class="location-item"
+                            data-name="Kothrud">
+
+                            <div class="location-icon green">
+                                ♻️
+                            </div>
+
+                            <div class="location-details">
+
+                                <h3>
+                                    Kothrud Collection Point
+                                </h3>
+
+                                <p>
+                                    Kothrud, Pune
+                                </p>
+
+                                <span class="location-status open">
+                                    ● Operational
+                                </span>
+
+                            </div>
+
+                            <span class="distance">
+                                2.1 km
+                            </span>
+
+                        </div>
+
+
+                        <!-- LOCATION 2 -->
+
+                        <div
+                            class="location-item"
+                            data-name="Hinjawadi">
+
+                            <div class="location-icon blue">
+                                🗑️
+                            </div>
+
+                            <div class="location-details">
+
+                                <h3>
+                                    Hinjawadi Waste Point
+                                </h3>
+
+                                <p>
+                                    Hinjawadi, Pune
+                                </p>
+
+                                <span class="location-status open">
+                                    ● Operational
+                                </span>
+
+                            </div>
+
+                            <span class="distance">
+                                4.5 km
+                            </span>
+
+                        </div>
+
+
+                        <!-- LOCATION 3 -->
+
+                        <div
+                            class="location-item"
+                            data-name="Hadapsar">
+
+                            <div class="location-icon orange">
+                                📦
+                            </div>
+
+                            <div class="location-details">
+
+                                <h3>
+                                    Hadapsar Collection Centre
+                                </h3>
+
+                                <p>
+                                    Hadapsar, Pune
+                                </p>
+
+                                <span class="location-status attention">
+                                    ● Needs Attention
+                                </span>
+
+                            </div>
+
+                            <span class="distance">
+                                6.2 km
+                            </span>
+
+                        </div>
+
+
+                        <!-- LOCATION 4 -->
+
+                        <div
+                            class="location-item"
+                            data-name="Baner">
+
+                            <div class="location-icon green">
+                                ♻️
+                            </div>
+
+                            <div class="location-details">
+
+                                <h3>
+                                    Baner Recycling Point
+                                </h3>
+
+                                <p>
+                                    Baner, Pune
+                                </p>
+
+                                <span class="location-status open">
+                                    ● Operational
+                                </span>
+
+                            </div>
+
+                            <span class="distance">
+                                7.8 km
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MAP AREA
+                     ================================================= -->
+
+                <div class="map-card">
+
+                    <div class="map-header">
+
+                        <div>
+
+                            <span>
+                                GIS VIEW
+                            </span>
+
+                            <h2>
+                                Pune Waste
+                                <strong>Management Map</strong>
+                            </h2>
+
+                        </div>
+
+                        <div class="map-status">
+
+                            <span class="status-dot"></span>
+
+                            Live Map View
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAP PLACEHOLDER -->
+
+                    <div class="map-area">
+
+                        <div class="map-background">
+
+                            <div class="map-road road-1"></div>
+                            <div class="map-road road-2"></div>
+                            <div class="map-road road-3"></div>
+                            <div class="map-road road-4"></div>
+
+
+                            <!-- PIN 1 -->
+
+                            <button
+                                class="map-pin pin-1"
+                                data-location="Kothrud"
+                                title="Kothrud">
+
+                                ♻️
+
+                            </button>
+
+
+                            <!-- PIN 2 -->
+
+                            <button
+                                class="map-pin pin-2"
+                                data-location="Hinjawadi"
+                                title="Hinjawadi">
+
+                                🗑️
+
+                            </button>
+
+
+                            <!-- PIN 3 -->
+
+                            <button
+                                class="map-pin pin-3"
+                                data-location="Hadapsar"
+                                title="Hadapsar">
+
+                                📦
+
+                            </button>
+
+
+                            <!-- PIN 4 -->
+
+                            <button
+                                class="map-pin pin-4"
+                                data-location="Baner"
+                                title="Baner">
+
+                                ♻️
+
+                            </button>
+
+
+                            <!-- CENTER -->
+
+                            <div class="map-label">
+
+                                📍 Pune
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="map-overlay-message">
+
+                            <span>
+                                🗺️
+                            </span>
+
+                            <strong>
+                                GIS Map Interface
+                            </strong>
+
+                            <p>
+                                Interactive map integration can be
+                                connected here later.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAP LEGEND -->
+
+                    <div class="map-legend">
+
+                        <div>
+                            <span class="legend-icon green">
+                                ♻️
+                            </span>
+
+                            Recycling / Collection
+                        </div>
+
+                        <div>
+                            <span class="legend-icon blue">
+                                🗑️
+                            </span>
+
+                            Waste Collection
+                        </div>
+
+                        <div>
+                            <span class="legend-icon orange">
+                                ⚠️
+                            </span>
+
+                            Attention Required
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOCATION TYPES
+         ===================================================== -->
+
+    <section class="location-types">
+
+        <div class="locations-container">
+
+            <div class="section-heading">
+
+                <span>
+                    LOCATION SERVICES
+                </span>
+
+                <h2>
+                    Location-Based
+                    <strong>Waste Management</strong>
+                </h2>
+
+                <p>
+                    Geographic information can help identify waste
+                    hotspots and support more efficient planning.
+                </p>
+
+            </div>
+
+
+            <div class="location-type-grid">
+
+
+                <div class="location-type-card">
+
+                    <div class="type-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Collection Points
+                    </h3>
+
+                    <p>
+                        Locate designated waste collection
+                        and recycling points.
+                    </p>
+
+                </div>
+
+
+                <div class="location-type-card">
+
+                    <div class="type-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Waste Hotspots
+                    </h3>
+
+                    <p>
+                        Identify locations where waste frequently
+                        accumulates.
+                    </p>
+
+                </div>
+
+
+                <div class="location-type-card">
+
+                    <div class="type-icon">
+                        🚛
+                    </div>
+
+                    <h3>
+                        Route Planning
+                    </h3>
+
+                    <p>
+                        Support efficient collection route
+                        planning using geographic information.
+                    </p>
+
+                </div>
+
+
+                <div class="location-type-card">
+
+                    <div class="type-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Spatial Analysis
+                    </h3>
+
+                    <p>
+                        Visualize waste-related information
+                        to support planning and decisions.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REPORT CTA
+         ===================================================== -->
+
+    <section class="location-cta">
+
+        <div class="locations-container">
+
+            <div class="location-cta-box">
+
+                <div>
+
+                    <span>
+                        SEE SOMETHING? REPORT IT.
+                    </span>
+
+                    <h2>
+                        Found an unlisted
+                        <strong>waste location?</strong>
+                    </h2>
+
+                    <p>
+                        Submit the location through WasteVision
+                        and help improve community waste reporting.
+                    </p>
+
+                </div>
+
+
+                <a href="{{ url_for('report') }}"
+                   class="location-btn">
+
+                    Report Waste →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {% include 'components/footer.html' %}
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           SEARCH LOCATIONS
+           ===================================================== */
+
+        const searchInput =
+            document.getElementById("locationSearch");
+
+        const locationItems =
+            document.querySelectorAll(".location-item");
+
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                const search =
+                    this.value.toLowerCase().trim();
+
+
+                locationItems.forEach(item => {
+
+                    const name =
+                        item.dataset.name.toLowerCase();
+
+
+                    if (
+                        name.includes(search)
+                    ) {
+
+                        item.style.display =
+                            "flex";
+
+                    }
+
+                    else {
+
+                        item.style.display =
+                            "none";
+
+                    }
+
+                });
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LOCATION SELECT
+           ===================================================== */
+
+        locationItems.forEach(item => {
+
+            item.addEventListener(
+                "click",
+                function () {
+
+                    locationItems.forEach(
+                        location =>
+                            location.classList.remove(
+                                "selected"
+                            )
+                    );
+
+
+                    this.classList.add(
+                        "selected"
+                    );
+
+                    const name =
+                        this.dataset.name;
+
+
+                    document
+                        .querySelectorAll(".map-pin")
+                        .forEach(pin => {
+
+                            pin.classList.remove(
+                                "selected"
+                            );
+
+
+                            if (
+                                pin.dataset.location === name
+                            ) {
+
+                                pin.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        });
+
+                }
+            );
+
+        });
+
+
+
+        /* =====================================================
+           MAP PIN SELECTION
+           ===================================================== */
+
+        const pins =
+            document.querySelectorAll(".map-pin");
+
+
+        pins.forEach(pin => {
+
+            pin.addEventListener(
+                "click",
+                function () {
+
+                    const name =
+                        this.dataset.location;
+
+
+                    locationItems.forEach(
+                        item => {
+
+                            item.classList.remove(
+                                "selected"
+                            );
+
+
+                            if (
+                                item.dataset.name === name
+                            ) {
+
+                                item.classList.add(
+                                    "selected"
+                                );
+
+                                item.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "nearest"
+                                });
+
+                            }
+
+                        }
+                    );
+
+
+                    pins.forEach(
+                        p =>
+                            p.classList.remove(
+                                "selected"
+                            )
+                    );
+
+
+                    this.classList.add(
+                        "selected"
+                    );
+
+                }
+            );
+
+        });
+
+
+
+        /* =====================================================
+           CURRENT LOCATION
+           ===================================================== */
+
+        document
+            .getElementById("currentLocation")
+            .addEventListener(
+                "click",
+                function () {
+
+                    if (
+                        !navigator.geolocation
+                    ) {
+
+                        alert(
+                            "Location services are not supported by your browser."
+                        );
+
+                        return;
+
+                    }
+
+
+                    this.innerHTML =
+                        "📍 Detecting Location...";
+
+
+                    navigator.geolocation.getCurrentPosition(
+
+                        function () {
+
+                            document
+                                .getElementById(
+                                    "currentLocation"
+                                )
+                                .innerHTML =
+                                "✓ Location Detected";
+
+                        },
+
+                        function () {
+
+                            document
+                                .getElementById(
+                                    "currentLocation"
+                                )
+                                .innerHTML =
+                                "📍 Use My Location";
+
+                            alert(
+                                "Unable to access your location."
+                            );
+
+                        }
+
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

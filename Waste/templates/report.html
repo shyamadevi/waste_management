@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Report Waste | WasteVision</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/report.css') }}">
+
+</head>
+
+
+<body>
+
+    {% include 'components/navbar.html' %}
+
+
+    <!-- =====================================================
+         PAGE HERO
+         ===================================================== -->
+
+    <section class="report-hero">
+
+        <div class="report-hero-overlay"></div>
+
+        <div class="report-hero-content">
+
+            <span>
+                📢 CITIZEN REPORTING
+            </span>
+
+            <h1>
+                Report Waste.
+                <strong>Make Your Community Cleaner.</strong>
+            </h1>
+
+            <p>
+                Help identify waste problems, illegal dumping and
+                neglected locations by submitting a report to
+                WasteVision.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REPORT AREA
+         ===================================================== -->
+
+    <section class="report-section">
+
+        <div class="report-container">
+
+            <div class="report-layout">
+
+
+                <!-- =================================================
+                     LEFT INFORMATION
+                     ================================================= -->
+
+                <div class="report-info">
+
+                    <span class="section-label">
+                        HOW IT HELPS
+                    </span>
+
+                    <h2>
+                        Your Report Can
+                        <strong>Make a Difference</strong>
+                    </h2>
+
+                    <p>
+                        Community participation can help identify
+                        waste-related problems and provide useful
+                        information for better waste-management
+                        planning.
+                    </p>
+
+
+                    <div class="report-benefits">
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                📍
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Identify Locations
+                                </h3>
+
+                                <p>
+                                    Help identify areas affected by
+                                    waste accumulation or dumping.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                📷
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Add Visual Evidence
+                                </h3>
+
+                                <p>
+                                    Upload an image to provide useful
+                                    visual information about the issue.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="benefit">
+
+                            <div class="benefit-icon">
+                                ♻️
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Support Better Management
+                                </h3>
+
+                                <p>
+                                    Report information can support
+                                    waste-management monitoring and
+                                    planning.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="report-note">
+
+                        <span>
+                            💡
+                        </span>
+
+                        <p>
+                            Please provide accurate information and
+                            avoid submitting duplicate reports for
+                            the same location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REPORT FORM
+                     ================================================= -->
+
+                <div class="report-form-card">
+
+                    <div class="form-header">
+
+                        <span>
+                            NEW REPORT
+                        </span>
+
+                        <h2>
+                            Report Waste
+                        </h2>
+
+                        <p>
+                            Tell us about the waste problem.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="wasteReportForm">
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name">
+
+                        </div>
+
+
+
+                        <!-- WASTE TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="wasteType">
+                                Waste Category
+                            </label>
+
+                            <select
+                                id="wasteType"
+                                name="wasteType">
+
+                                <option value="">
+                                    Select waste category
+                                </option>
+
+                                <option value="hazardous">
+                                    Hazardous
+                                </option>
+
+                                <option value="organic">
+                                    Organic
+                                </option>
+
+                                <option value="inorganic">
+                                    Inorganic
+                                </option>
+
+                                <option value="recyclable">
+                                    Recyclable
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- LOCATION -->
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <div class="location-input">
+
+                                <input
+                                    type="text"
+                                    id="location"
+                                    name="location"
+                                    placeholder="Enter waste location">
+
+                                <button
+                                    type="button"
+                                    id="locationBtn"
+                                    title="Use current location">
+
+                                    📍
+
+                                </button>
+
+                            </div>
+
+                            <small>
+                                Example: Hinjawadi, Kothrud,
+                                Hadapsar, Pune
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                name="description"
+                                rows="5"
+                                placeholder="Describe the waste issue or dumping location..."></textarea>
+
+                        </div>
+
+
+
+                        <!-- IMAGE -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Waste Image
+                            </label>
+
+                            <label
+                                class="upload-box"
+                                for="wasteImage">
+
+                                <div class="upload-icon">
+                                    📷
+                                </div>
+
+                                <strong>
+                                    Upload an image
+                                </strong>
+
+                                <span>
+                                    Click to choose a photo
+                                </span>
+
+                                <small>
+                                    JPG, JPEG or PNG
+                                </small>
+
+                                <input
+                                    type="file"
+                                    id="wasteImage"
+                                    name="wasteImage"
+                                    accept="image/*">
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- PREVIEW -->
+
+                        <div
+                            id="imagePreview"
+                            class="image-preview">
+
+                            <img
+                                id="previewImage"
+                                src=""
+                                alt="Selected waste image">
+
+                            <button
+                                type="button"
+                                id="removeImage">
+
+                                ×
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            Submit Waste Report
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div
+                        id="successMessage"
+                        class="success-message">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Report Submitted
+                        </h3>
+
+                        <p>
+                            Your waste report has been recorded
+                            successfully.
+                        </p>
+
+                        <button
+                            id="newReportBtn">
+
+                            Submit Another Report
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REPORT TYPES
+         ===================================================== -->
+
+    <section class="report-types">
+
+        <div class="report-container">
+
+            <div class="section-heading">
+
+                <span>
+                    WHAT CAN YOU REPORT?
+                </span>
+
+                <h2>
+                    Help Us Identify
+                    <strong>Waste Problems</strong>
+                </h2>
+
+                <p>
+                    Report different waste-management issues
+                    you observe in your community.
+                </p>
+
+            </div>
+
+
+            <div class="report-type-grid">
+
+
+                <div class="report-type-card">
+
+                    <div class="type-icon">
+                        🗑️
+                    </div>
+
+                    <h3>
+                        Illegal Dumping
+                    </h3>
+
+                    <p>
+                        Report locations where waste has been
+                        improperly dumped.
+                    </p>
+
+                </div>
+
+
+
+                <div class="report-type-card">
+
+                    <div class="type-icon">
+                        🚮
+                    </div>
+
+                    <h3>
+                        Overflowing Waste
+                    </h3>
+
+                    <p>
+                        Report bins or collection points that
+                        appear to require attention.
+                    </p>
+
+                </div>
+
+
+
+                <div class="report-type-card">
+
+                    <div class="type-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Waste Hotspots
+                    </h3>
+
+                    <p>
+                        Identify areas where waste regularly
+                        accumulates.
+                    </p>
+
+                </div>
+
+
+
+                <div class="report-type-card">
+
+                    <div class="type-icon">
+                        ⚠️
+                    </div>
+
+                    <h3>
+                        Other Issues
+                    </h3>
+
+                    <p>
+                        Report other waste-related problems
+                        affecting your area.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
+
+    <section class="report-bottom-cta">
+
+        <div class="report-container">
+
+            <div class="bottom-cta-box">
+
+                <div>
+
+                    <span>
+                        🌿 CLEAN PUNE • SMART PUNE
+                    </span>
+
+                    <h2>
+                        Every Report Starts
+                        <strong>With Someone Who Cares.</strong>
+                    </h2>
+
+                    <p>
+                        Your participation can help build better
+                        awareness around waste-management issues.
+                    </p>
+
+                </div>
+
+
+                <a href="{{ url_for('categories') }}"
+                   class="cta-link">
+
+                    Learn About Waste Categories →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    {% include 'components/footer.html' %}
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        const form =
+            document.getElementById("wasteReportForm");
+
+        const imageInput =
+            document.getElementById("wasteImage");
+
+        const imagePreview =
+            document.getElementById("imagePreview");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+        const removeImage =
+            document.getElementById("removeImage");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        const newReportBtn =
+            document.getElementById("newReportBtn");
+
+
+
+        /* Image Preview */
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                const file = this.files[0];
+
+                if (!file) {
+                    return;
+                }
+
+                const reader =
+                    new FileReader();
+
+                reader.onload = function (event) {
+
+                    previewImage.src =
+                        event.target.result;
+
+                    imagePreview.classList.add(
+                        "show"
+                    );
+
+                };
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+
+
+        /* Remove Image */
+
+        removeImage.addEventListener(
+            "click",
+            function () {
+
+                imageInput.value = "";
+
+                previewImage.src = "";
+
+                imagePreview.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* Current Location */
+
+        document
+            .getElementById("locationBtn")
+            .addEventListener(
+                "click",
+                function () {
+
+                    if (!navigator.geolocation) {
+
+                        alert(
+                            "Location services are not supported by your browser."
+                        );
+
+                        return;
+
+                    }
+
+
+                    navigator.geolocation.getCurrentPosition(
+
+                        function (position) {
+
+                            const latitude =
+                                position.coords.latitude;
+
+                            const longitude =
+                                position.coords.longitude;
+
+                            document
+                                .getElementById("location")
+                                .value =
+                                `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+
+                        },
+
+                        function () {
+
+                            alert(
+                                "Unable to access your current location."
+                            );
+
+                        }
+
+                    );
+
+                }
+            );
+
+
+
+        /* Submit */
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const submitButton =
+                    form.querySelector(
+                        ".submit-btn"
+                    );
+
+
+                submitButton.innerHTML =
+                    "Submitting...";
+
+
+                submitButton.disabled =
+                    true;
+
+
+                setTimeout(
+                    function () {
+
+                        form.style.display =
+                            "none";
+
+                        successMessage.classList.add(
+                            "show"
+                        );
+
+                    },
+                    900
+                );
+
+            }
+        );
+
+
+
+        /* New Report */
+
+        newReportBtn.addEventListener(
+            "click",
+            function () {
+
+                form.reset();
+
+                imagePreview.classList.remove(
+                    "show"
+                );
+
+                successMessage.classList.remove(
+                    "show"
+                );
+
+                form.style.display =
+                    "block";
+
+                const submitButton =
+                    form.querySelector(
+                        ".submit-btn"
+                    );
+
+                submitButton.innerHTML =
+                    'Submit Waste Report <span>→</span>';
+
+                submitButton.disabled =
+                    false;
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
