@@ -1,0 +1,12 @@
+{
+  "dataset": "simulated_pune_daily_waste_forecasting.csv",
+  "target": "daily_waste_tonnes",
+  "model": "RandomForestRegressor",
+  "training_records": 36792,
+  "validation_records": 9240,
+  "validation_start_date": "2025-05-26",
+  "mae_tonnes": 1.1858,
+  "rmse_tonnes": 1.5597,
+  "r2_score": 0.9834,
+  "note": "Prototype trained on simulated daily waste data derived from Pune ward-level averages."
+}
