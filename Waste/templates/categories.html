@@ -478,57 +478,308 @@
          AI CLASSIFICATION
          ===================================================== -->
 
-    <section class="ai-section">
+    <!-- =====================================================
+     WASTE IDENTIFIER
+     ===================================================== -->
 
-        <div class="categories-container">
+<section class="ai-section">
 
-            <div class="ai-box">
+    <div class="categories-container">
 
-                <div class="ai-text">
+        <div class="ai-header">
 
-                    <span>
-                        🤖 INTELLIGENT CLASSIFICATION
-                    </span>
+            <span>
+                🤖 SMART WASTE IDENTIFIER
+            </span>
 
-                    <h2>
-                        Let Technology
-                        <strong>Help Identify Waste</strong>
-                    </h2>
+            <h2>
+                Not Sure Where Your Waste
+                <strong>Belongs?</strong>
+            </h2>
 
-                    <p>
-                        WasteVision is designed to support AI-based
-                        image classification, helping identify the
-                        category of waste and assisting users in making
-                        better segregation decisions.
-                    </p>
+            <p>
+                Upload a photo or enter the name of a waste item.
+                WasteVision will suggest one of the four waste
+                categories.
+            </p>
 
-                    <a href="{{ url_for('report') }}"
-                       class="category-btn">
-                        Report Waste →
-                    </a>
+        </div>
+
+
+        <div class="identifier-box">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="identifier-left">
+
+                <div class="input-tabs">
+
+                    <button
+                        class="input-tab active"
+                        id="photoTab">
+
+                        📷
+                        <span>Upload Photo</span>
+
+                    </button>
+
+                    <button
+                        class="input-tab"
+                        id="nameTab">
+
+                        🔎
+                        <span>Enter Name</span>
+
+                    </button>
 
                 </div>
 
 
-                <div class="ai-visual">
+                <!-- PHOTO INPUT -->
 
-                    <div class="ai-circle">
+                <div
+                    class="identifier-panel active"
+                    id="photoPanel">
 
-                        <span class="ai-main-icon">
-                            🤖
-                        </span>
+                    <label
+                        class="camera-box"
+                        for="wastePhoto">
 
-                        <div class="orbit orbit-1">
-                            ♻️
+                        <div class="camera-icon">
+                            📷
                         </div>
 
-                        <div class="orbit orbit-2">
+                        <h3>
+                            Take or Upload a Photo
+                        </h3>
+
+                        <p>
+                            Choose an image of the waste item
+                            you want to identify.
+                        </p>
+
+                        <span class="camera-button">
+                            Choose Image
+                        </span>
+
+                        <small>
+                            JPG, JPEG or PNG
+                        </small>
+
+                        <input
+                            type="file"
+                            id="wastePhoto"
+                            accept="image/*">
+
+                    </label>
+
+
+                    <!-- IMAGE PREVIEW -->
+
+                    <div
+                        class="identifier-preview"
+                        id="identifierPreview">
+
+                        <img
+                            id="identifierImage"
+                            src=""
+                            alt="Waste preview">
+
+                        <button
+                            type="button"
+                            id="removeIdentifierImage">
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAME INPUT -->
+
+                <div
+                    class="identifier-panel"
+                    id="namePanel">
+
+                    <div class="name-input-area">
+
+                        <label for="wasteName">
+                            Enter Waste Item
+                        </label>
+
+                        <div class="name-input-wrapper">
+
+                            <span>
+                                🔎
+                            </span>
+
+                            <input
+                                type="text"
+                                id="wasteName"
+                                placeholder="Example: banana peel">
+
+                        </div>
+
+                        <p>
+                            Enter the common name of the item,
+                            such as bottle, banana peel, battery,
+                            cardboard, etc.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="identify-btn"
+                    id="identifyWaste">
+
+                    Identify Waste
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="identifier-right">
+
+                <div class="result-placeholder"
+                     id="resultPlaceholder">
+
+                    <div class="result-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Your Result Will Appear Here
+                    </h3>
+
+                    <p>
+                        Upload an image or enter a waste name
+                        to see the suggested category.
+                    </p>
+
+                    <div class="mini-categories">
+
+                        <span class="mini-hazardous">
+                            ☣️ Hazardous
+                        </span>
+
+                        <span class="mini-organic">
+                            🌱 Organic
+                        </span>
+
+                        <span class="mini-inorganic">
+                            🗑️ Inorganic
+                        </span>
+
+                        <span class="mini-recyclable">
+                            ♻️ Recyclable
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div
+                    class="classification-result"
+                    id="classificationResult">
+
+                    <div class="result-heading">
+
+                        <span>
+                            AI CLASSIFICATION
+                        </span>
+
+                        <div class="confidence">
+                            <span class="confidence-dot"></span>
+                            Demo Result
+                        </div>
+
+                    </div>
+
+
+                    <div class="classified-item">
+
+                        <div class="classified-icon"
+                             id="classifiedIcon">
                             🌱
                         </div>
 
-                        <div class="orbit orbit-3">
-                            ☣️
+                        <div>
+
+                            <small>
+                                SUGGESTED CATEGORY
+                            </small>
+
+                            <h3 id="classifiedCategory">
+                                Organic
+                            </h3>
+
                         </div>
+
+                    </div>
+
+
+                    <div class="confidence-bar">
+
+                        <div class="confidence-info">
+
+                            <span>
+                                Classification confidence
+                            </span>
+
+                            <strong id="confidenceValue">
+                                92%
+                            </strong>
+
+                        </div>
+
+                        <div class="confidence-track">
+
+                            <div
+                                id="confidenceFill"
+                                class="confidence-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-description">
+
+                        <strong>
+                            Why this category?
+                        </strong>
+
+                        <p id="classificationDescription">
+                            This item is identified as biodegradable
+                            waste and can generally be managed as
+                            organic waste.
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-action">
+
+                        <a href="{{ url_for('categories') }}">
+                            View Category Details →
+                        </a>
 
                     </div>
 
@@ -538,7 +789,22 @@
 
         </div>
 
-    </section>
+
+        <div class="identifier-note">
+
+            <span>💡</span>
+
+            <p>
+                The current classifier is a frontend demonstration.
+                Your trained AI model can be connected here later
+                to provide real image-based classification.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
@@ -594,6 +860,27 @@
 
     {% include 'components/footer.html' %}
 
+    <script>
+        const photoTab = document.getElementById("photoTab");
+        const nameTab = document.getElementById("nameTab");
+        const photoPanel = document.getElementById("photoPanel");
+        const namePanel = document.getElementById("namePanel");
+
+        function showIdentifierPanel(tab, panel, inactiveTab, inactivePanel) {
+            tab.classList.add("active");
+            panel.classList.add("active");
+            inactiveTab.classList.remove("active");
+            inactivePanel.classList.remove("active");
+        }
+
+        photoTab.addEventListener("click", function () {
+            showIdentifierPanel(photoTab, photoPanel, nameTab, namePanel);
+        });
+
+        nameTab.addEventListener("click", function () {
+            showIdentifierPanel(nameTab, namePanel, photoTab, photoPanel);
+        });
+    </script>
 
 </body>
 
